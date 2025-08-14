@@ -215,9 +215,43 @@ class DataManager: ObservableObject {
     }
     
     func signOut() {
-        userProfile = UserProfile()
-        dailyStats = []
-        currentSession = nil
+        // Preserve some data that shouldn't be lost on sign-out
+        let lifetimeCount = userProfile.totalLifetimeCount
+        let joinDate = userProfile.joinDate
+        let currentStreak = userProfile.currentStreak
+        let longestStreak = userProfile.longestStreak
+        let totalDonations = userProfile.totalDonations
+        let totalDonationAmount = userProfile.totalDonationAmount
+        let preferredDeities = userProfile.preferredDeities
+        let dailyGoal = userProfile.dailyGoal
+        let favoriteSessionDuration = userProfile.favoriteSessionDuration
+        let preferredMusicTrack = userProfile.preferredMusicTrack
+        
+        // Reset authentication-related data
+        userProfile.isGuest = true
+        userProfile.appleUserID = nil
+        userProfile.googleEmail = nil
+        userProfile.name = nil
+        userProfile.email = nil
+        userProfile.age = nil
+        userProfile.gender = nil
+        userProfile.profileImageURL = nil
+        
+        // Restore important data that should persist
+        userProfile.totalLifetimeCount = lifetimeCount
+        userProfile.joinDate = joinDate
+        userProfile.currentStreak = currentStreak
+        userProfile.longestStreak = longestStreak
+        userProfile.totalDonations = totalDonations
+        userProfile.totalDonationAmount = totalDonationAmount
+        userProfile.preferredDeities = preferredDeities
+        userProfile.dailyGoal = dailyGoal
+        userProfile.favoriteSessionDuration = favoriteSessionDuration
+        userProfile.preferredMusicTrack = preferredMusicTrack
+        
+        // Keep daily stats and current session as they represent spiritual practice
+        // Only reset authentication, not spiritual progress
+        
         saveData()
     }
 }

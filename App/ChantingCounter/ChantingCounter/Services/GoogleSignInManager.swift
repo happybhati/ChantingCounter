@@ -159,11 +159,5 @@ extension DataManager {
         }
     }
     
-    func signOut() {
-        userProfile.isGuest = true
-        userProfile.appleUserID = nil
-        userProfile.googleEmail = nil
-        userProfile.name = nil
-        saveData()
-    }
+
 }
