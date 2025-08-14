@@ -9,7 +9,9 @@ import SwiftUI
 import StoreKit
 
 struct DonationView: View {
+    @StateObject private var storeKit = StoreKitManager.shared
     @State private var showingThankYou = false
+    @State private var purchaseError: String?
     
     var body: some View {
         ScrollView {
@@ -76,37 +78,49 @@ struct DonationView: View {
                         DonationButton(
                             title: "Small Coffee",
                             subtitle: "Thank you for your kindness",
-                            amount: "$2.99",
-                            color: .blue
+                            amount: storeKit.getFormattedPrice(for: .smallCoffee),
+                            color: .blue,
+                            isLoading: storeKit.isLoading
                         ) {
-                            processDonation(amount: 2.99)
+                            Task {
+                                await processDonation(.smallCoffee)
+                            }
                         }
                         
                         DonationButton(
                             title: "Large Coffee",
                             subtitle: "Your generosity is appreciated",
-                            amount: "$4.99",
-                            color: .orange
+                            amount: storeKit.getFormattedPrice(for: .largeCoffee),
+                            color: .orange,
+                            isLoading: storeKit.isLoading
                         ) {
-                            processDonation(amount: 4.99)
+                            Task {
+                                await processDonation(.largeCoffee)
+                            }
                         }
                         
                         DonationButton(
                             title: "Generous Support",
                             subtitle: "Helping us grow and serve better",
-                            amount: "$9.99",
-                            color: .green
+                            amount: storeKit.getFormattedPrice(for: .generousSupport),
+                            color: .green,
+                            isLoading: storeKit.isLoading
                         ) {
-                            processDonation(amount: 9.99)
+                            Task {
+                                await processDonation(.generousSupport)
+                            }
                         }
                         
                         DonationButton(
                             title: "Spiritual Patron",
                             subtitle: "Supporting our mission deeply",
-                            amount: "$19.99",
-                            color: .purple
+                            amount: storeKit.getFormattedPrice(for: .spiritualPatron),
+                            color: .purple,
+                            isLoading: storeKit.isLoading
                         ) {
-                            processDonation(amount: 19.99)
+                            Task {
+                                await processDonation(.spiritualPatron)
+                            }
                         }
                     }
                 }
@@ -134,15 +148,24 @@ struct DonationView: View {
         } message: {
             Text("Your generous support helps us maintain the app and contribute to humanitarian causes. May your kindness return to you multiplied.")
         }
+        .alert("Purchase Error", isPresented: .constant(purchaseError != nil)) {
+            Button("OK") { purchaseError = nil }
+        } message: {
+            if let error = purchaseError {
+                Text(error)
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .donationCompleted)) { _ in
+            showingThankYou = true
+        }
     }
     
-    private func processDonation(amount: Double) {
-        // In a real app, this would integrate with StoreKit for in-app purchases
-        // For now, we'll show a thank you message
-        showingThankYou = true
-        
-        // TODO: Implement actual StoreKit integration
-        print("Processing donation of $\(amount)")
+    private func processDonation(_ productID: StoreKitManager.ProductID) async {
+        do {
+            try await storeKit.purchase(productID)
+        } catch {
+            purchaseError = error.localizedDescription
+        }
     }
 }
 
@@ -169,10 +192,11 @@ struct DonationButton: View {
     let subtitle: String
     let amount: String
     let color: Color
+    let isLoading: Bool
     let action: () -> Void
     
     var body: some View {
-        Button(action: action) {
+        Button(action: isLoading ? {} : action) {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(title)
@@ -186,10 +210,16 @@ struct DonationButton: View {
                 
                 Spacer()
                 
-                Text(amount)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
+                if isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        .scaleEffect(0.8)
+                } else {
+                    Text(amount)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                }
             }
             .padding()
             .background(
@@ -197,6 +227,8 @@ struct DonationButton: View {
                     .fill(color.gradient)
             )
         }
+        .disabled(isLoading)
+        .opacity(isLoading ? 0.6 : 1.0)
     }
 }
 
