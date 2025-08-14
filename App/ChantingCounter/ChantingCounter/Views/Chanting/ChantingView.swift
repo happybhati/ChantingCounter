@@ -42,47 +42,48 @@ struct ChantingView: View {
                     
                     Spacer()
                     
-                    // Control buttons (when goal is reached)
-                    if let session = dataManager.currentSession, session.isGoalReached {
-                        HStack(spacing: 16) {
+                    // Session control buttons (always available)
+                    if dataManager.currentSession != nil {
+                        HStack(spacing: 12) {
                             Button(action: {
-                                // Go to home
                                 dataManager.endSession()
                             }) {
-                                HStack {
+                                HStack(spacing: 8) {
                                     Image(systemName: "house.fill")
                                     Text("Home")
                                 }
-                                .font(.headline)
+                                .font(.subheadline)
+                                .fontWeight(.medium)
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
-                                .frame(height: 50)
+                                .frame(height: 44)
                                 .background(Color.blue)
-                                .cornerRadius(12)
+                                .cornerRadius(10)
                             }
                             
                             Button(action: {
                                 dataManager.endSession()
                             }) {
-                                HStack {
+                                HStack(spacing: 8) {
                                     Image(systemName: "stop.fill")
                                     Text("End Session")
                                 }
-                                .font(.headline)
+                                .font(.subheadline)
+                                .fontWeight(.medium)
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
-                                .frame(height: 50)
+                                .frame(height: 44)
                                 .background(Color.red)
-                                .cornerRadius(12)
+                                .cornerRadius(10)
                             }
                         }
                         .padding(.horizontal)
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                        .padding(.bottom, 8)
                     }
                     
                     // Tap area
                     tapAreaView
-                        .frame(height: geometry.size.height * (dataManager.currentSession?.isGoalReached == true ? 0.15 : 0.25))
+                        .frame(height: geometry.size.height * 0.2)
                 }
             }
         }
