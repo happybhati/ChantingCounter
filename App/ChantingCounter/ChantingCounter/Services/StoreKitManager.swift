@@ -124,7 +124,7 @@ class StoreKitManager: NSObject, ObservableObject {
     private func listenForTransactions() -> Task<Void, Error> {
         return Task.detached {
             // Iterate through any transactions that don't come from a direct call to `purchase()`.
-            for await result in Transaction.updates {
+            for await result in StoreKit.Transaction.updates {
                 do {
                     let transaction = try self.checkVerified(result)
                     await self.handleSuccessfulPurchase(transaction)
@@ -148,7 +148,7 @@ class StoreKitManager: NSObject, ObservableObject {
     }
     
     @MainActor
-    private func handleSuccessfulPurchase(_ transaction: Transaction) async {
+    private func handleSuccessfulPurchase(_ transaction: StoreKit.Transaction) async {
         // Handle the successful purchase
         print("Successfully purchased: \(transaction.productID)")
         
