@@ -11,6 +11,7 @@ import UserNotifications
 struct SettingsView: View {
     @EnvironmentObject var dataManager: DataManager
     @State private var showingSignOut = false
+    @State private var showingProfileEdit = false
     @State private var reminderTime = Date()
     @State private var dailyGoal = ""
     @State private var notificationPermissionStatus: UNAuthorizationStatus = .notDetermined
@@ -19,30 +20,38 @@ struct SettingsView: View {
         List {
             // Profile Section
             Section {
-                HStack {
-                    Image(systemName: dataManager.userProfile.isGuest ? "person.circle" : "person.crop.circle.fill")
-                        .font(.title)
-                        .foregroundStyle(.orange)
-                    
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(dataManager.userProfile.displayName)
-                            .font(.headline)
+                Button(action: {
+                    showingProfileEdit = true
+                }) {
+                    HStack {
+                        Image(systemName: dataManager.userProfile.isGuest ? "person.circle" : "person.crop.circle.fill")
+                            .font(.title)
+                            .foregroundStyle(.orange)
                         
-                        Text(dataManager.userProfile.isGuest ? "Guest User" : "Signed in with Apple")
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(dataManager.userProfile.displayName)
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                            
+                            Text("Signed in with \(dataManager.userProfile.signInMethod)")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            
+                            if let email = dataManager.userProfile.email ?? dataManager.userProfile.googleEmail {
+                                Text(email)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        Image(systemName: "chevron.right")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
-                    
-                    Spacer()
-                    
-                    if dataManager.userProfile.isGuest {
-                        Button("Sign In") {
-                            // Handle sign in
-                        }
-                        .buttonStyle(.bordered)
-                    }
+                    .padding(.vertical, 4)
                 }
-                .padding(.vertical, 4)
             } header: {
                 Text("Profile")
             }
@@ -220,6 +229,9 @@ struct SettingsView: View {
             }
         } message: {
             Text("Are you sure you want to sign out? Your data will be saved locally.")
+        }
+        .sheet(isPresented: $showingProfileEdit) {
+            ProfileEditView()
         }
     }
     

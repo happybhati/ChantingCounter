@@ -10,6 +10,7 @@ import AuthenticationServices
 
 struct WelcomeView: View {
     @EnvironmentObject var dataManager: DataManager
+    @StateObject private var googleSignInManager = GoogleSignInManager.shared
     @State private var showingOnboarding = false
     
     var body: some View {
@@ -50,6 +51,26 @@ struct WelcomeView: View {
                     .signInWithAppleButtonStyle(.black)
                     .frame(height: 50)
                     .cornerRadius(12)
+                    
+                    // Sign in with Google
+                    Button(action: {
+                        Task {
+                            await googleSignInManager.signIn()
+                            if googleSignInManager.isSignedIn {
+                                showingOnboarding = true
+                            }
+                        }
+                    }) {
+                        HStack {
+                            Image(systemName: "globe")
+                            Text("Sign in with Google")
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
+                    }
                     
                     // Continue as Guest
                     Button(action: {
