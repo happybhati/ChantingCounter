@@ -73,6 +73,10 @@ class AudioManager: ObservableObject {
     func setVolume(_ volume: Float) {
         audioPlayer?.volume = volume
     }
+    
+    var currentVolume: Float {
+        return audioPlayer?.volume ?? 0.3
+    }
 }
 
 struct MeditativeTrack: Identifiable, Hashable {
@@ -182,7 +186,7 @@ struct MusicControlView: View {
             }
         }
         .onAppear {
-            volume = audioManager.audioPlayer?.volume ?? 0.3
+            volume = audioManager.currentVolume
         }
     }
 }
