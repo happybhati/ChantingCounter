@@ -12,6 +12,12 @@ struct HistoryView: View {
     @EnvironmentObject var dataManager: DataManager
     @State private var selectedTimeRange: TimeRange = .week
     
+    private let dayFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d"
+        return formatter
+    }()
+    
     enum TimeRange: String, CaseIterable {
         case week = "Week"
         case month = "Month"
@@ -30,29 +36,51 @@ struct HistoryView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal)
                 
-                // Chart - Placeholder for now
+                // Chart - Improved bar chart
                 if !filteredStats.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Daily Progress")
                             .font(.headline)
                             .padding(.horizontal)
                         
-                        // Simple bar chart placeholder
-                        HStack(alignment: .bottom, spacing: 4) {
-                            ForEach(filteredStats.prefix(7)) { stats in
-                                VStack {
-                                    Rectangle()
+                        // Improved bar chart
+                        let maxCount = filteredStats.map { $0.totalCount }.max() ?? 1
+                        let chartHeight: CGFloat = 150
+                        
+                        HStack(alignment: .bottom, spacing: 8) {
+                            ForEach(filteredStats.suffix(7)) { stats in
+                                VStack(spacing: 4) {
+                                    // Bar
+                                    RoundedRectangle(cornerRadius: 4)
                                         .fill(.orange.gradient)
-                                        .frame(width: 30, height: CGFloat(stats.totalCount) * 2 + 10)
+                                        .frame(
+                                            width: 32,
+                                            height: max(4, CGFloat(stats.totalCount) / CGFloat(maxCount) * chartHeight)
+                                        )
+                                        .animation(.easeInOut(duration: 0.5), value: stats.totalCount)
                                     
-                                    Text("\(Calendar.current.component(.day, from: stats.date))")
+                                    // Count label
+                                    Text("\(stats.totalCount)")
                                         .font(.caption2)
+                                        .fontWeight(.medium)
+                                        .foregroundStyle(.orange)
+                                    
+                                    // Date label
+                                    Text(dayFormatter.string(from: stats.date))
+                                        .font(.caption2)
+                                        .foregroundStyle(.secondary)
                                 }
                             }
                         }
-                        .frame(height: 200)
+                        .frame(height: chartHeight + 40)
                         .padding(.horizontal)
                     }
+                    .padding(.vertical)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(.systemGray6))
+                    )
+                    .padding(.horizontal)
                 }
                 
                 // Statistics summary
