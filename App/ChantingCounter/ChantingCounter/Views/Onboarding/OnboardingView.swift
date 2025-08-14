@@ -35,6 +35,22 @@ struct OnboardingView: View {
                 
                 ScrollView {
                     VStack(spacing: 24) {
+                        // Language Toggle
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Display Preferences")
+                                .font(.headline)
+                            
+                            Toggle("Show deity names in original language", isOn: $dataManager.userProfile.useOriginalLanguageNames)
+                                .toggleStyle(SwitchToggleStyle(tint: .orange))
+                                .onChange(of: dataManager.userProfile.useOriginalLanguageNames) { _ in
+                                    dataManager.saveData()
+                                }
+                            
+                            Text("Enable to see deity names in their traditional scripts (Hindi, Arabic, Gurmukhi)")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        
                         // Deity Selection
                         VStack(alignment: .leading, spacing: 16) {
                             Text("Choose Your Deity")
@@ -44,7 +60,8 @@ struct OnboardingView: View {
                                 ForEach(DeityName.allCases.filter { $0 != .custom }, id: \.self) { deity in
                                     DeitySelectionCard(
                                         deity: deity,
-                                        isSelected: selectedDeity == deity
+                                        isSelected: selectedDeity == deity,
+                                        useOriginalLanguage: dataManager.userProfile.useOriginalLanguageNames
                                     ) {
                                         selectedDeity = deity
                                         customDeityName = ""
@@ -145,7 +162,11 @@ struct OnboardingView: View {
     }
     
     private var finalDeityName: String {
-        selectedDeity == .custom ? customDeityName.trimmingCharacters(in: .whitespacesAndNewlines) : selectedDeity.displayName
+        if selectedDeity == .custom {
+            return customDeityName.trimmingCharacters(in: .whitespacesAndNewlines)
+        } else {
+            return selectedDeity.name(useOriginalLanguage: dataManager.userProfile.useOriginalLanguageNames)
+        }
     }
     
     private func startChanting() {
@@ -158,6 +179,7 @@ struct OnboardingView: View {
 struct DeitySelectionCard: View {
     let deity: DeityName
     let isSelected: Bool
+    let useOriginalLanguage: Bool
     let action: () -> Void
     
     var body: some View {
@@ -166,9 +188,18 @@ struct DeitySelectionCard: View {
                 Text(deity.symbol)
                     .font(.system(size: 30))
                 
-                Text(deity.displayName)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
+                VStack(spacing: 2) {
+                    Text(deity.name(useOriginalLanguage: useOriginalLanguage))
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .multilineTextAlignment(.center)
+                    
+                    if useOriginalLanguage && deity != .jesus && deity != .custom {
+                        Text("(\(deity.displayName))")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                }
             }
             .frame(maxWidth: .infinity)
             .frame(height: 80)

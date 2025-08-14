@@ -42,6 +42,7 @@ struct UserProfile: Codable {
     var preferredMusicTrack: String?
     var totalDonations: Int = 0
     var totalDonationAmount: Double = 0.0
+    var useOriginalLanguageNames: Bool = false
     
     /// Check if user is signed in with Apple or Google
     var isSignedIn: Bool {

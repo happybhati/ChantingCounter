@@ -106,6 +106,57 @@ struct SettingsView: View {
                 Text("Goals & Reminders")
             }
             
+            // Display Preferences Section
+            Section {
+                HStack {
+                    Image(systemName: "textformat")
+                        .foregroundStyle(.green)
+                    
+                    Toggle("Show deity names in original language", isOn: $dataManager.userProfile.useOriginalLanguageNames)
+                        .onChange(of: dataManager.userProfile.useOriginalLanguageNames) { _ in
+                            dataManager.saveData()
+                        }
+                }
+                
+                if dataManager.userProfile.useOriginalLanguageNames {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Original Language Examples:")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            HStack {
+                                Text("राम")
+                                    .font(.body)
+                                Text("(Ram)")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            
+                            HStack {
+                                Text("الله")
+                                    .font(.body)
+                                Text("(Allah)")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            
+                            HStack {
+                                Text("ਵਾਹਿਗੁਰੂ")
+                                    .font(.body)
+                                Text("(Waheguru)")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        .font(.caption)
+                    }
+                    .padding(.leading, 30)
+                }
+            } header: {
+                Text("Display Preferences")
+            }
+            
             // Statistics Section
             Section {
                 StatRow(title: "Lifetime Total", value: "\(dataManager.userProfile.totalLifetimeCount)", icon: "infinity")

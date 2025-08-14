@@ -52,6 +52,36 @@ enum DeityName: String, CaseIterable {
         return rawValue
     }
     
+    /// Original language name for the deity
+    var originalLanguageName: String {
+        switch self {
+        case .ram: return "राम" // Hindi/Sanskrit
+        case .radha: return "राधा" // Hindi/Sanskrit  
+        case .krishna: return "कृष्ण" // Hindi/Sanskrit
+        case .om: return "ॐ" // Sanskrit
+        case .jesus: return "Jesus" // English (original)
+        case .allah: return "الله" // Arabic
+        case .waheguru: return "ਵਾਹਿਗੁਰੂ" // Gurmukhi/Punjabi
+        case .custom: return "Custom" // User-defined
+        }
+    }
+    
+    /// Language/tradition the deity belongs to
+    var tradition: String {
+        switch self {
+        case .ram, .radha, .krishna, .om: return "Hindu/Sanskrit"
+        case .jesus: return "Christian" 
+        case .allah: return "Islamic"
+        case .waheguru: return "Sikh"
+        case .custom: return "Custom"
+        }
+    }
+    
+    /// Get display name based on user preference for original language
+    func name(useOriginalLanguage: Bool) -> String {
+        return useOriginalLanguage ? originalLanguageName : displayName
+    }
+    
     var symbol: String {
         switch self {
         case .ram: return "🙏"
