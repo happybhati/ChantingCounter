@@ -105,23 +105,29 @@ struct ContentView: View {
     }
 }
 
+// Simple watch session model
+struct WatchSession {
+    var deityName: String = "Om"
+    var currentCount: Int = 0
+    var targetCount: Int? = 108
+    
+    var progress: Double {
+        guard let target = targetCount, target > 0 else { return 0.0 }
+        return min(Double(currentCount) / Double(target), 1.0)
+    }
+}
+
 // Watch-specific data manager
 @MainActor
 class WatchDataManager: ObservableObject {
-    @Published var currentSession: ChantingSession?
+    @Published var currentSession: WatchSession?
     @Published var lifetimeCount: Int = 0
     
     private let userDefaults = UserDefaults.standard
     
     func startSession() {
         // Load or create a default session
-        if let data = userDefaults.data(forKey: "watchSession"),
-           let session = try? JSONDecoder().decode(ChantingSession.self, from: data) {
-            currentSession = session
-        } else {
-            // Default session
-            currentSession = ChantingSession(deityName: "Om", targetCount: 108)
-        }
+        currentSession = WatchSession(deityName: "Om", currentCount: 0, targetCount: 108)
         
         // Load lifetime count
         lifetimeCount = userDefaults.integer(forKey: "lifetimeCount")
@@ -135,9 +141,6 @@ class WatchDataManager: ObservableObject {
         lifetimeCount += 1
         
         // Save data
-        if let data = try? JSONEncoder().encode(session) {
-            userDefaults.set(data, forKey: "watchSession")
-        }
         userDefaults.set(lifetimeCount, forKey: "lifetimeCount")
         
         // Sync with iPhone app (would use Watch Connectivity in real implementation)
