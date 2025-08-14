@@ -7,7 +7,8 @@
 
 import Foundation
 import SwiftUI
-// import GoogleSignIn // Will be added when GoogleSignIn SDK is integrated
+// TODO: Add GoogleSignIn import after adding the SDK via Swift Package Manager
+// import GoogleSignIn
 
 @MainActor
 class GoogleSignInManager: ObservableObject {
@@ -22,19 +23,68 @@ class GoogleSignInManager: ObservableObject {
     
     // Configure Google Sign-In (call this in AppDelegate or App.swift)
     func configure() {
-        // TODO: Add GoogleSignIn configuration
-        // guard let path = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") else { return }
-        // GoogleSignIn.GIDSignIn.sharedInstance.configuration = GIDConfiguration(path: path)
-        print("Google Sign-In configured (placeholder)")
+        // TODO: Uncomment when GoogleSignIn SDK is added via Swift Package Manager
+        /*
+        guard let path = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") else {
+            print("GoogleService-Info.plist not found")
+            return
+        }
+        
+        guard let plistData = FileManager.default.contents(atPath: path),
+              let plist = try? PropertyListSerialization.propertyList(from: plistData, format: nil) as? [String: Any],
+              let clientId = plist["CLIENT_ID"] as? String else {
+            print("Failed to parse GoogleService-Info.plist")
+            return
+        }
+        
+        guard let config = GIDConfiguration(clientID: clientId) else {
+            print("Failed to create GID configuration")
+            return
+        }
+        
+        GIDSignIn.sharedInstance.configuration = config
+        */
+        print("Google Sign-In configured (placeholder - add GoogleSignIn SDK)")
     }
     
     // Sign in with Google
     func signIn() async {
-        // TODO: Implement actual Google Sign-In
-        // This is a placeholder implementation
+        // TODO: Uncomment when GoogleSignIn SDK is added
+        /*
+        do {
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                  let window = windowScene.windows.first,
+                  let rootViewController = window.rootViewController else {
+                print("No root view controller found")
+                return
+            }
+            
+            let result = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
+            let user = result.user
+            
+            await MainActor.run {
+                self.isSignedIn = true
+                self.userEmail = user.profile?.email
+                self.userName = user.profile?.name
+                self.userProfileImage = user.profile?.imageURL(withDimension: 200)?.absoluteString
+                
+                // Update DataManager
+                DataManager.shared.signInWithGoogle(
+                    email: self.userEmail ?? "",
+                    name: self.userName ?? ""
+                )
+            }
+            
+            print("Google Sign-In successful for user: \(user.profile?.email ?? "Unknown")")
+            
+        } catch {
+            print("Google Sign-In failed: \(error.localizedDescription)")
+        }
+        */
+        
+        // Placeholder implementation - remove when real implementation is active
         print("Google Sign-In initiated (placeholder)")
         
-        // Simulate successful sign-in for now
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.isSignedIn = true
             self.userEmail = "user@gmail.com"
@@ -51,25 +101,46 @@ class GoogleSignInManager: ObservableObject {
     
     // Sign out
     func signOut() {
-        // TODO: Implement actual Google Sign-Out
-        // GoogleSignIn.GIDSignIn.sharedInstance.signOut()
+        // TODO: Uncomment when GoogleSignIn SDK is added
+        // GIDSignIn.sharedInstance.signOut()
         
         isSignedIn = false
         userEmail = nil
         userName = nil
         userProfileImage = nil
         
-        print("Google Sign-Out completed (placeholder)")
+        // Update DataManager
+        DataManager.shared.signOut()
+        
+        print("Google Sign-Out completed")
     }
     
     // Check if user is already signed in
     func checkSignInStatus() {
-        // TODO: Check actual Google Sign-In status
-        // if let user = GoogleSignIn.GIDSignIn.sharedInstance.currentUser {
-        //     isSignedIn = true
-        //     userEmail = user.profile?.email
-        //     userName = user.profile?.name
-        // }
+        // TODO: Uncomment when GoogleSignIn SDK is added
+        /*
+        if GIDSignIn.sharedInstance.hasPreviousSignIn() {
+            GIDSignIn.sharedInstance.restorePreviousSignIn { [weak self] result, error in
+                DispatchQueue.main.async {
+                    if let user = result {
+                        self?.isSignedIn = true
+                        self?.userEmail = user.profile?.email
+                        self?.userName = user.profile?.name
+                        self?.userProfileImage = user.profile?.imageURL(withDimension: 200)?.absoluteString
+                        
+                        // Update DataManager if needed
+                        if let email = user.profile?.email, let name = user.profile?.name {
+                            DataManager.shared.signInWithGoogle(email: email, name: name)
+                        }
+                        
+                        print("Google Sign-In restored for user: \(user.profile?.email ?? "Unknown")")
+                    } else {
+                        print("Failed to restore Google Sign-In: \(error?.localizedDescription ?? "Unknown error")")
+                    }
+                }
+            }
+        }
+        */
         print("Checking Google Sign-In status (placeholder)")
     }
 }
@@ -79,12 +150,20 @@ extension DataManager {
     func signInWithGoogle(email: String, name: String) {
         userProfile.isGuest = false
         userProfile.appleUserID = nil // Clear Apple ID since using Google
+        userProfile.googleEmail = email
         userProfile.name = name
-        // Add email to user profile (we'll add this field next)
         saveData()
         
         Task {
             await syncWithCloudKit()
         }
+    }
+    
+    func signOut() {
+        userProfile.isGuest = true
+        userProfile.appleUserID = nil
+        userProfile.googleEmail = nil
+        userProfile.name = nil
+        saveData()
     }
 }

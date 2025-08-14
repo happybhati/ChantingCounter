@@ -11,6 +11,11 @@ import SwiftUI
 struct ChantingCounterApp: App {
     @StateObject private var dataManager = DataManager.shared
     
+    init() {
+        // Configure Google Sign-In
+        GoogleSignInManager.shared.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             Group {
@@ -21,6 +26,10 @@ struct ChantingCounterApp: App {
                 }
             }
             .environmentObject(dataManager)
+            .onAppear {
+                // Check for existing Google Sign-In session
+                GoogleSignInManager.shared.checkSignInStatus()
+            }
         }
     }
 }
