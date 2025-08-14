@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @EnvironmentObject var dataManager: DataManager
+    @StateObject private var dataManager = DataManager.shared
     @Environment(\.dismiss) private var dismiss
     
     @State private var selectedDeity: DeityName = .ram
@@ -187,5 +187,4 @@ struct DeitySelectionCard: View {
 
 #Preview {
     OnboardingView()
-        .environmentObject(DataManager.shared)
 }

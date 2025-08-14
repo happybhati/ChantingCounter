@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChantingView: View {
-    @EnvironmentObject var dataManager: DataManager
+    @StateObject private var dataManager = DataManager.shared
     @State private var animationScale: CGFloat = 1.0
     @State private var nameClusterScale: CGFloat = 1.0
     @State private var showingGoalReached = false
@@ -210,7 +210,6 @@ struct ChantingView: View {
 
 #Preview {
     ChantingView()
-        .environmentObject(DataManager.shared)
         .onAppear {
             DataManager.shared.startSession(deityName: "Ram", targetCount: 108)
         }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @EnvironmentObject var dataManager: DataManager
+    @StateObject private var dataManager = DataManager.shared
     
     var body: some View {
         TabView {
@@ -48,7 +48,7 @@ struct MainTabView: View {
 }
 
 struct HomeView: View {
-    @EnvironmentObject var dataManager: DataManager
+    @StateObject private var dataManager = DataManager.shared
     @State private var showingNewSession = false
     
     var body: some View {
@@ -214,5 +214,4 @@ struct RecentActivityCard: View {
 
 #Preview {
     MainTabView()
-        .environmentObject(DataManager.shared)
 }

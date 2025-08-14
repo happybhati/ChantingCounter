@@ -9,7 +9,7 @@ import SwiftUI
 // import Charts // Commented out for now - will add Charts framework later
 
 struct HistoryView: View {
-    @EnvironmentObject var dataManager: DataManager
+    @StateObject private var dataManager = DataManager.shared
     @State private var selectedTimeRange: TimeRange = .week
     
     enum TimeRange: String, CaseIterable {
@@ -242,5 +242,4 @@ struct DailyHistoryCard: View {
     NavigationView {
         HistoryView()
     }
-    .environmentObject(DataManager.shared)
 }

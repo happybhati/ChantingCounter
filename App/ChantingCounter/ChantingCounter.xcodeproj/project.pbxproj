@@ -71,9 +71,30 @@
 		1A2217B72E4E661300CD4087 /* ChantingCounter Watch App Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ChantingCounter Watch App Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1A22180B2E4E6A9D00CD4087 /* Exceptions for "ChantingCounter" folder in "ChantingCounter Watch App Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Models 2/ChantingSession.swift",
+				"Models 2/UserProfile.swift",
+				"Services 2/DataManager.swift",
+				"Views 2/Authentication/WelcomeView.swift",
+				"Views 2/Chanting/ChantingView.swift",
+				"Views 2/History/HistoryView.swift",
+				"Views 2/MainTabView.swift",
+				"Views 2/Onboarding/OnboardingView.swift",
+				"Views 2/Settings/SettingsView.swift",
+			);
+			target = 1A2217A02E4E661100CD4087 /* ChantingCounter Watch App Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1A2217752E4E653E00CD4087 /* ChantingCounter */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1A22180B2E4E6A9D00CD4087 /* Exceptions for "ChantingCounter" folder in "ChantingCounter Watch App Watch App" target */,
+			);
 			path = ChantingCounter;
 			sourceTree = "<group>";
 		};

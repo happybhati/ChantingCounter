@@ -9,7 +9,7 @@ import SwiftUI
 import AuthenticationServices
 
 struct WelcomeView: View {
-    @EnvironmentObject var dataManager: DataManager
+    @StateObject private var dataManager = DataManager.shared
     @State private var showingOnboarding = false
     
     var body: some View {
@@ -115,5 +115,4 @@ struct WelcomeView: View {
 
 #Preview {
     WelcomeView()
-        .environmentObject(DataManager.shared)
 }

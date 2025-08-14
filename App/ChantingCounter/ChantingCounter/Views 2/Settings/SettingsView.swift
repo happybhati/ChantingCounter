@@ -9,7 +9,7 @@ import SwiftUI
 import UserNotifications
 
 struct SettingsView: View {
-    @EnvironmentObject var dataManager: DataManager
+    @StateObject private var dataManager = DataManager.shared
     @State private var showingSignOut = false
     @State private var reminderTime = Date()
     @State private var dailyGoal = ""
@@ -304,5 +304,4 @@ struct StatRow: View {
     NavigationView {
         SettingsView()
     }
-    .environmentObject(DataManager.shared)
 }
