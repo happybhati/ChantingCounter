@@ -92,7 +92,7 @@ class StoreKitManager: NSObject, ObservableObject {
             switch result {
             case .success(let verification):
                 // Verify the purchase
-                let transaction = try checkVerified(verification)
+                let transaction = try Self.checkVerified(verification)
                 
                 // Process the successful purchase
                 await handleSuccessfulPurchase(transaction)
@@ -127,7 +127,7 @@ class StoreKitManager: NSObject, ObservableObject {
             for await result in StoreKit.Transaction.updates {
                 do {
                     guard let self = self else { return }
-                    let transaction = try self.checkVerified(result)
+                    let transaction = try Self.checkVerified(result)
                     await self.handleSuccessfulPurchase(transaction)
                     await transaction.finish()
                 } catch {
@@ -137,7 +137,7 @@ class StoreKitManager: NSObject, ObservableObject {
         }
     }
     
-    private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
+    private static func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
         // Check whether the transaction is verified. If it isn't,
         // this function rethrows the verification error.
         switch result {
