@@ -12,7 +12,9 @@ struct ChantingView: View {
     @State private var animationScale: CGFloat = 1.0
     @State private var nameClusterScale: CGFloat = 1.0
     @State private var showingGoalReached = false
+    @State private var showingGoalMessage = false
     @State private var hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+    @State private var goalReachedHaptic = UINotificationFeedbackGenerator()
     
     var body: some View {
         GeometryReader { geometry in
@@ -40,24 +42,78 @@ struct ChantingView: View {
                     
                     Spacer()
                     
+                    // Control buttons (when goal is reached)
+                    if let session = dataManager.currentSession, session.isGoalReached {
+                        HStack(spacing: 16) {
+                            Button(action: {
+                                // Go to home
+                                dataManager.endSession()
+                            }) {
+                                HStack {
+                                    Image(systemName: "house.fill")
+                                    Text("Home")
+                                }
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 50)
+                                .background(Color.blue)
+                                .cornerRadius(12)
+                            }
+                            
+                            Button(action: {
+                                dataManager.endSession()
+                            }) {
+                                HStack {
+                                    Image(systemName: "stop.fill")
+                                    Text("End Session")
+                                }
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 50)
+                                .background(Color.red)
+                                .cornerRadius(12)
+                            }
+                        }
+                        .padding(.horizontal)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                    }
+                    
                     // Tap area
                     tapAreaView
-                        .frame(height: geometry.size.height * 0.25)
+                        .frame(height: geometry.size.height * (dataManager.currentSession?.isGoalReached == true ? 0.15 : 0.25))
                 }
             }
         }
         .navigationBarHidden(true)
         .onAppear {
             hapticFeedback.prepare()
+            goalReachedHaptic.prepare()
         }
-        .alert("Goal Reached! 🎉", isPresented: $showingGoalReached) {
-            Button("Continue") { }
-            Button("End Session") {
-                dataManager.endSession()
+        .overlay(
+            // Non-intrusive goal reached message
+            VStack {
+                if showingGoalMessage {
+                    HStack {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.green)
+                        Text("Goal Reached! 🎉")
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(.systemBackground))
+                            .shadow(radius: 8)
+                    )
+                    .transition(.move(edge: .top).combined(with: .opacity))
+                }
+                Spacer()
             }
-        } message: {
-            Text("Congratulations! You've reached your chanting goal.")
-        }
+            .padding(.top, 50)
+        )
     }
     
     private var headerView: some View {
@@ -88,30 +144,39 @@ struct ChantingView: View {
     }
     
     private var nameClusterView: some View {
-        ScrollView {
-            if let session = dataManager.currentSession {
-                LazyVGrid(
-                    columns: Array(repeating: GridItem(.flexible()), count: adaptiveColumnCount),
-                    spacing: 8
-                ) {
-                    ForEach(0..<session.currentCount, id: \.self) { index in
-                        Text(session.deityName)
-                            .font(.caption)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(
-                                Capsule()
-                                    .fill(Color.orange.opacity(0.2))
-                            )
-                            .scaleEffect(nameClusterScale)
-                            .animation(
-                                .spring(response: 0.3, dampingFraction: 0.6)
-                                .delay(Double(index % 10) * 0.02),
-                                value: nameClusterScale
-                            )
+        ScrollViewReader { proxy in
+            ScrollView {
+                if let session = dataManager.currentSession {
+                    LazyVGrid(
+                        columns: Array(repeating: GridItem(.flexible()), count: adaptiveColumnCount),
+                        spacing: 8
+                    ) {
+                        ForEach(0..<session.currentCount, id: \.self) { index in
+                            Text(session.deityName)
+                                .font(.caption)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(
+                                    Capsule()
+                                        .fill(Color.orange.opacity(0.2))
+                                )
+                                .scaleEffect(nameClusterScale)
+                                .animation(
+                                    .spring(response: 0.3, dampingFraction: 0.6)
+                                    .delay(Double(index % 10) * 0.02),
+                                    value: nameClusterScale
+                                )
+                                .id(index)
+                        }
+                    }
+                    .padding()
+                    .onChange(of: session.currentCount) { count in
+                        // Auto-scroll to bottom when new names are added
+                        withAnimation(.easeOut(duration: 0.5)) {
+                            proxy.scrollTo(count - 1, anchor: .bottom)
+                        }
                     }
                 }
-                .padding()
             }
         }
     }
@@ -197,13 +262,28 @@ struct ChantingView: View {
             nameClusterScale = 1.0
         }
         
+        // Check if goal will be reached with this increment
+        let wasGoalReached = dataManager.currentSession?.isGoalReached ?? false
+        
         // Update data
         dataManager.incrementCount()
         
-        // Check if goal is reached
+        // Check if goal is reached for the first time
         if let session = dataManager.currentSession,
-           session.isGoalReached && !showingGoalReached {
-            showingGoalReached = true
+           session.isGoalReached && !wasGoalReached {
+            // Goal reached for first time - show celebration
+            goalReachedHaptic.notificationOccurred(.success)
+            
+            withAnimation(.spring()) {
+                showingGoalMessage = true
+            }
+            
+            // Hide message after 3 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                withAnimation(.spring()) {
+                    showingGoalMessage = false
+                }
+            }
         }
     }
 }

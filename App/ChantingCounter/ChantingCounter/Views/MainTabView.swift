@@ -34,6 +34,15 @@ struct MainTabView: View {
                 Text("History")
             }
             
+            // Donation Tab
+            NavigationView {
+                DonationView()
+            }
+            .tabItem {
+                Image(systemName: "heart.fill")
+                Text("Donate")
+            }
+            
             // Settings Tab
             NavigationView {
                 SettingsView()

@@ -47,6 +47,13 @@ struct SettingsView: View {
                 Text("Profile")
             }
             
+            // Background Music Section
+            Section {
+                MusicControlView()
+            } header: {
+                Text("Background Music")
+            }
+            
             // Goals & Reminders Section
             Section {
                 // Daily Goal

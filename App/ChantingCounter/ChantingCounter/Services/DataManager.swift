@@ -115,6 +115,12 @@ class DataManager: ObservableObject {
         // Update user's lifetime count
         userProfile.totalLifetimeCount += 1
         
+        // Sync to watch
+        WatchConnectivityManager.shared.sendCountIncrement(
+            newCount: session.currentCount,
+            lifetimeTotal: userProfile.totalLifetimeCount
+        )
+        
         saveData()
     }
     
