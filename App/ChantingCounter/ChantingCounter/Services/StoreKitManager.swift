@@ -127,7 +127,7 @@ class StoreKitManager: NSObject, ObservableObject {
             for await result in StoreKit.Transaction.updates {
                 do {
                     guard let self = self else { return }
-                    let transaction = try Self.checkVerified(result)
+                    let transaction = try await Self.checkVerified(result)
                     await self.handleSuccessfulPurchase(transaction)
                     await transaction.finish()
                 } catch {
@@ -215,16 +215,4 @@ extension Notification.Name {
     static let donationCompleted = Notification.Name("donationCompleted")
 }
 
-// MARK: - DataManager Extension
 
-extension DataManager {
-    func recordDonation(productID: String) {
-        // Record the donation in user profile
-        userProfile.totalDonations += 1
-        
-        // You could also track total donation amount if needed
-        // userProfile.totalDonationAmount += amount
-        
-        saveData()
-    }
-}

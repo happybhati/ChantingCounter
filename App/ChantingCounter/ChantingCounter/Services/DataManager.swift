@@ -254,6 +254,16 @@ class DataManager: ObservableObject {
         
         saveData()
     }
+    
+    func recordDonation(productID: String) {
+        // Record the donation in user profile
+        userProfile.totalDonations += 1
+        
+        // You could also track total donation amount if needed
+        // userProfile.totalDonationAmount += amount
+        
+        saveData()
+    }
 }
 
 /// CloudKit manager for data synchronization
