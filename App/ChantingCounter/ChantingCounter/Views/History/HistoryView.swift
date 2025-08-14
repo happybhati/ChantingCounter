@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Charts
+// import Charts // Commented out for now - will add Charts framework later
 
 struct HistoryView: View {
     @StateObject private var dataManager = DataManager.shared
@@ -30,19 +30,25 @@ struct HistoryView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal)
                 
-                // Chart
+                // Chart - Placeholder for now
                 if !filteredStats.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Daily Progress")
                             .font(.headline)
                             .padding(.horizontal)
                         
-                        Chart(filteredStats) { stats in
-                            BarMark(
-                                x: .value("Date", stats.date, unit: .day),
-                                y: .value("Count", stats.totalCount)
-                            )
-                            .foregroundStyle(.orange.gradient)
+                        // Simple bar chart placeholder
+                        HStack(alignment: .bottom, spacing: 4) {
+                            ForEach(filteredStats.prefix(7)) { stats in
+                                VStack {
+                                    Rectangle()
+                                        .fill(.orange.gradient)
+                                        .frame(width: 30, height: CGFloat(stats.totalCount) * 2 + 10)
+                                    
+                                    Text("\(Calendar.current.component(.day, from: stats.date))")
+                                        .font(.caption2)
+                                }
+                            }
                         }
                         .frame(height: 200)
                         .padding(.horizontal)

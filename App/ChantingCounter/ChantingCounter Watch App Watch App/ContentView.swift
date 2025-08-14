@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WatchKit
 
 struct ContentView: View {
     @StateObject private var watchDataManager = WatchDataManager()
