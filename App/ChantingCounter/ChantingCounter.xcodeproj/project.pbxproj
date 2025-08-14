@@ -1,0 +1,951 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A2217C12E4E661300CD4087 /* ChantingCounter Watch App Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1A2217A12E4E661100CD4087 /* ChantingCounter Watch App Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A2217812E4E654000CD4087 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A22176B2E4E653E00CD4087 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A2217722E4E653E00CD4087;
+			remoteInfo = ChantingCounter;
+		};
+		1A22178B2E4E654000CD4087 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A22176B2E4E653E00CD4087 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A2217722E4E653E00CD4087;
+			remoteInfo = ChantingCounter;
+		};
+		1A2217AE2E4E661300CD4087 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A22176B2E4E653E00CD4087 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A2217A02E4E661100CD4087;
+			remoteInfo = "ChantingCounter Watch App Watch App";
+		};
+		1A2217B82E4E661300CD4087 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A22176B2E4E653E00CD4087 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A2217A02E4E661100CD4087;
+			remoteInfo = "ChantingCounter Watch App Watch App";
+		};
+		1A2217BF2E4E661300CD4087 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A22176B2E4E653E00CD4087 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A2217A02E4E661100CD4087;
+			remoteInfo = "ChantingCounter Watch App Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1A2217C52E4E661300CD4087 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1A2217C12E4E661300CD4087 /* ChantingCounter Watch App Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1A2217732E4E653E00CD4087 /* ChantingCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChantingCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2217802E4E654000CD4087 /* ChantingCounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChantingCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A22178A2E4E654000CD4087 /* ChantingCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChantingCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2217A12E4E661100CD4087 /* ChantingCounter Watch App Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChantingCounter Watch App Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2217AD2E4E661300CD4087 /* ChantingCounter Watch App Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ChantingCounter Watch App Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2217B72E4E661300CD4087 /* ChantingCounter Watch App Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ChantingCounter Watch App Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1A2217752E4E653E00CD4087 /* ChantingCounter */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ChantingCounter;
+			sourceTree = "<group>";
+		};
+		1A2217832E4E654000CD4087 /* ChantingCounterTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ChantingCounterTests;
+			sourceTree = "<group>";
+		};
+		1A22178D2E4E654000CD4087 /* ChantingCounterUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ChantingCounterUITests;
+			sourceTree = "<group>";
+		};
+		1A2217A22E4E661100CD4087 /* ChantingCounter Watch App Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "ChantingCounter Watch App Watch App";
+			sourceTree = "<group>";
+		};
+		1A2217B02E4E661300CD4087 /* ChantingCounter Watch App Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "ChantingCounter Watch App Watch AppTests";
+			sourceTree = "<group>";
+		};
+		1A2217BA2E4E661300CD4087 /* ChantingCounter Watch App Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "ChantingCounter Watch App Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A2217702E4E653E00CD4087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A22177D2E4E654000CD4087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A2217872E4E654000CD4087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A22179E2E4E661100CD4087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A2217AA2E4E661300CD4087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A2217B42E4E661300CD4087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A22176A2E4E653E00CD4087 = {
+			isa = PBXGroup;
+			children = (
+				1A2217752E4E653E00CD4087 /* ChantingCounter */,
+				1A2217832E4E654000CD4087 /* ChantingCounterTests */,
+				1A22178D2E4E654000CD4087 /* ChantingCounterUITests */,
+				1A2217A22E4E661100CD4087 /* ChantingCounter Watch App Watch App */,
+				1A2217B02E4E661300CD4087 /* ChantingCounter Watch App Watch AppTests */,
+				1A2217BA2E4E661300CD4087 /* ChantingCounter Watch App Watch AppUITests */,
+				1A2217742E4E653E00CD4087 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A2217742E4E653E00CD4087 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A2217732E4E653E00CD4087 /* ChantingCounter.app */,
+				1A2217802E4E654000CD4087 /* ChantingCounterTests.xctest */,
+				1A22178A2E4E654000CD4087 /* ChantingCounterUITests.xctest */,
+				1A2217A12E4E661100CD4087 /* ChantingCounter Watch App Watch App.app */,
+				1A2217AD2E4E661300CD4087 /* ChantingCounter Watch App Watch AppTests.xctest */,
+				1A2217B72E4E661300CD4087 /* ChantingCounter Watch App Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A2217722E4E653E00CD4087 /* ChantingCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A2217942E4E654000CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounter" */;
+			buildPhases = (
+				1A22176F2E4E653E00CD4087 /* Sources */,
+				1A2217702E4E653E00CD4087 /* Frameworks */,
+				1A2217712E4E653E00CD4087 /* Resources */,
+				1A2217C52E4E661300CD4087 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A2217C02E4E661300CD4087 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1A2217752E4E653E00CD4087 /* ChantingCounter */,
+			);
+			name = ChantingCounter;
+			packageProductDependencies = (
+			);
+			productName = ChantingCounter;
+			productReference = 1A2217732E4E653E00CD4087 /* ChantingCounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A22177F2E4E654000CD4087 /* ChantingCounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A2217972E4E654000CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounterTests" */;
+			buildPhases = (
+				1A22177C2E4E654000CD4087 /* Sources */,
+				1A22177D2E4E654000CD4087 /* Frameworks */,
+				1A22177E2E4E654000CD4087 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A2217822E4E654000CD4087 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1A2217832E4E654000CD4087 /* ChantingCounterTests */,
+			);
+			name = ChantingCounterTests;
+			packageProductDependencies = (
+			);
+			productName = ChantingCounterTests;
+			productReference = 1A2217802E4E654000CD4087 /* ChantingCounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1A2217892E4E654000CD4087 /* ChantingCounterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A22179A2E4E654000CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounterUITests" */;
+			buildPhases = (
+				1A2217862E4E654000CD4087 /* Sources */,
+				1A2217872E4E654000CD4087 /* Frameworks */,
+				1A2217882E4E654000CD4087 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A22178C2E4E654000CD4087 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1A22178D2E4E654000CD4087 /* ChantingCounterUITests */,
+			);
+			name = ChantingCounterUITests;
+			packageProductDependencies = (
+			);
+			productName = ChantingCounterUITests;
+			productReference = 1A22178A2E4E654000CD4087 /* ChantingCounterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		1A2217A02E4E661100CD4087 /* ChantingCounter Watch App Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A2217C22E4E661300CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounter Watch App Watch App" */;
+			buildPhases = (
+				1A22179D2E4E661100CD4087 /* Sources */,
+				1A22179E2E4E661100CD4087 /* Frameworks */,
+				1A22179F2E4E661100CD4087 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1A2217A22E4E661100CD4087 /* ChantingCounter Watch App Watch App */,
+			);
+			name = "ChantingCounter Watch App Watch App";
+			packageProductDependencies = (
+			);
+			productName = "ChantingCounter Watch App Watch App";
+			productReference = 1A2217A12E4E661100CD4087 /* ChantingCounter Watch App Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A2217AC2E4E661300CD4087 /* ChantingCounter Watch App Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A2217C62E4E661300CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounter Watch App Watch AppTests" */;
+			buildPhases = (
+				1A2217A92E4E661300CD4087 /* Sources */,
+				1A2217AA2E4E661300CD4087 /* Frameworks */,
+				1A2217AB2E4E661300CD4087 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A2217AF2E4E661300CD4087 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1A2217B02E4E661300CD4087 /* ChantingCounter Watch App Watch AppTests */,
+			);
+			name = "ChantingCounter Watch App Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "ChantingCounter Watch App Watch AppTests";
+			productReference = 1A2217AD2E4E661300CD4087 /* ChantingCounter Watch App Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1A2217B62E4E661300CD4087 /* ChantingCounter Watch App Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A2217C92E4E661300CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounter Watch App Watch AppUITests" */;
+			buildPhases = (
+				1A2217B32E4E661300CD4087 /* Sources */,
+				1A2217B42E4E661300CD4087 /* Frameworks */,
+				1A2217B52E4E661300CD4087 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A2217B92E4E661300CD4087 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1A2217BA2E4E661300CD4087 /* ChantingCounter Watch App Watch AppUITests */,
+			);
+			name = "ChantingCounter Watch App Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "ChantingCounter Watch App Watch AppUITests";
+			productReference = 1A2217B72E4E661300CD4087 /* ChantingCounter Watch App Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A22176B2E4E653E00CD4087 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					1A2217722E4E653E00CD4087 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					1A22177F2E4E654000CD4087 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 1A2217722E4E653E00CD4087;
+					};
+					1A2217892E4E654000CD4087 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 1A2217722E4E653E00CD4087;
+					};
+					1A2217A02E4E661100CD4087 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					1A2217AC2E4E661300CD4087 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 1A2217A02E4E661100CD4087;
+					};
+					1A2217B62E4E661300CD4087 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 1A2217A02E4E661100CD4087;
+					};
+				};
+			};
+			buildConfigurationList = 1A22176E2E4E653E00CD4087 /* Build configuration list for PBXProject "ChantingCounter" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A22176A2E4E653E00CD4087;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1A2217742E4E653E00CD4087 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A2217722E4E653E00CD4087 /* ChantingCounter */,
+				1A22177F2E4E654000CD4087 /* ChantingCounterTests */,
+				1A2217892E4E654000CD4087 /* ChantingCounterUITests */,
+				1A2217A02E4E661100CD4087 /* ChantingCounter Watch App Watch App */,
+				1A2217AC2E4E661300CD4087 /* ChantingCounter Watch App Watch AppTests */,
+				1A2217B62E4E661300CD4087 /* ChantingCounter Watch App Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A2217712E4E653E00CD4087 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A22177E2E4E654000CD4087 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A2217882E4E654000CD4087 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A22179F2E4E661100CD4087 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A2217AB2E4E661300CD4087 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A2217B52E4E661300CD4087 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A22176F2E4E653E00CD4087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A22177C2E4E654000CD4087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A2217862E4E654000CD4087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A22179D2E4E661100CD4087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A2217A92E4E661300CD4087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A2217B32E4E661300CD4087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A2217822E4E654000CD4087 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A2217722E4E653E00CD4087 /* ChantingCounter */;
+			targetProxy = 1A2217812E4E654000CD4087 /* PBXContainerItemProxy */;
+		};
+		1A22178C2E4E654000CD4087 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A2217722E4E653E00CD4087 /* ChantingCounter */;
+			targetProxy = 1A22178B2E4E654000CD4087 /* PBXContainerItemProxy */;
+		};
+		1A2217AF2E4E661300CD4087 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A2217A02E4E661100CD4087 /* ChantingCounter Watch App Watch App */;
+			targetProxy = 1A2217AE2E4E661300CD4087 /* PBXContainerItemProxy */;
+		};
+		1A2217B92E4E661300CD4087 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A2217A02E4E661100CD4087 /* ChantingCounter Watch App Watch App */;
+			targetProxy = 1A2217B82E4E661300CD4087 /* PBXContainerItemProxy */;
+		};
+		1A2217C02E4E661300CD4087 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A2217A02E4E661100CD4087 /* ChantingCounter Watch App Watch App */;
+			targetProxy = 1A2217BF2E4E661300CD4087 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A2217922E4E654000CD4087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1A2217932E4E654000CD4087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A2217952E4E654000CD4087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happybhati.chantingcounter.ChantingCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A2217962E4E654000CD4087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happybhati.chantingcounter.ChantingCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1A2217982E4E654000CD4087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happybhati.chantingcounter.ChantingCounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChantingCounter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChantingCounter";
+			};
+			name = Debug;
+		};
+		1A2217992E4E654000CD4087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happybhati.chantingcounter.ChantingCounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChantingCounter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChantingCounter";
+			};
+			name = Release;
+		};
+		1A22179B2E4E654000CD4087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happybhati.chantingcounter.ChantingCounterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChantingCounter;
+			};
+			name = Debug;
+		};
+		1A22179C2E4E654000CD4087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happybhati.chantingcounter.ChantingCounterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChantingCounter;
+			};
+			name = Release;
+		};
+		1A2217C32E4E661300CD4087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "ChantingCounter Watch App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.happybhati.chantingcounter.ChantingCounter;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happybhati.chantingcounter.ChantingCounter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		1A2217C42E4E661300CD4087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "ChantingCounter Watch App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.happybhati.chantingcounter.ChantingCounter;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happybhati.chantingcounter.ChantingCounter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		1A2217C72E4E661300CD4087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.happybhati.chantingcounter.ChantingCounter-Watch-App-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChantingCounter Watch App Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChantingCounter Watch App Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		1A2217C82E4E661300CD4087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.happybhati.chantingcounter.ChantingCounter-Watch-App-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChantingCounter Watch App Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChantingCounter Watch App Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		1A2217CA2E4E661300CD4087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.happybhati.chantingcounter.ChantingCounter-Watch-App-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "ChantingCounter Watch App Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		1A2217CB2E4E661300CD4087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LLSG6FG7D4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.happybhati.chantingcounter.ChantingCounter-Watch-App-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "ChantingCounter Watch App Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A22176E2E4E653E00CD4087 /* Build configuration list for PBXProject "ChantingCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2217922E4E654000CD4087 /* Debug */,
+				1A2217932E4E654000CD4087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A2217942E4E654000CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2217952E4E654000CD4087 /* Debug */,
+				1A2217962E4E654000CD4087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A2217972E4E654000CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2217982E4E654000CD4087 /* Debug */,
+				1A2217992E4E654000CD4087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A22179A2E4E654000CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A22179B2E4E654000CD4087 /* Debug */,
+				1A22179C2E4E654000CD4087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A2217C22E4E661300CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounter Watch App Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2217C32E4E661300CD4087 /* Debug */,
+				1A2217C42E4E661300CD4087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A2217C62E4E661300CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounter Watch App Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2217C72E4E661300CD4087 /* Debug */,
+				1A2217C82E4E661300CD4087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A2217C92E4E661300CD4087 /* Build configuration list for PBXNativeTarget "ChantingCounter Watch App Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2217CA2E4E661300CD4087 /* Debug */,
+				1A2217CB2E4E661300CD4087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A22176B2E4E653E00CD4087 /* Project object */;
+}
