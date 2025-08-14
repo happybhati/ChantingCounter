@@ -122,10 +122,11 @@ class StoreKitManager: NSObject, ObservableObject {
     // MARK: - Transaction Handling
     
     private func listenForTransactions() -> Task<Void, Error> {
-        return Task.detached {
+        return Task.detached { [weak self] in
             // Iterate through any transactions that don't come from a direct call to `purchase()`.
             for await result in StoreKit.Transaction.updates {
                 do {
+                    guard let self = self else { return }
                     let transaction = try self.checkVerified(result)
                     await self.handleSuccessfulPurchase(transaction)
                     await transaction.finish()
