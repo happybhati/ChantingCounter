@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct ChantingCounterApp: App {
+    @StateObject private var dataManager = DataManager.shared
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if dataManager.userProfile.isGuest && dataManager.userProfile.appleUserID == nil {
+                    WelcomeView()
+                } else {
+                    MainTabView()
+                }
+            }
+            .environmentObject(dataManager)
         }
     }
 }
