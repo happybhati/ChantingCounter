@@ -195,7 +195,7 @@ class DataManager: ObservableObject {
     
     // MARK: - CloudKit Sync
     
-    private func syncWithCloudKit() async {
+    func syncWithCloudKit() async {
         // Implementation for CloudKit sync
         // This would sync user data across devices
         await cloudKitManager.syncUserData(userProfile, dailyStats: dailyStats)
