@@ -57,14 +57,6 @@ struct WelcomeView: View {
                             .fontWeight(.medium)
                             .foregroundStyle(.secondary)
                             .multilineTextAlignment(.center)
-                        
-                        // Feature highlights
-                        HStack(spacing: 20) {
-                            FeatureBadge(icon: "🙏", text: "Multi-faith")
-                            FeatureBadge(icon: "📊", text: "Progress")
-                            FeatureBadge(icon: "⌚", text: "Apple Watch")
-                        }
-                        .padding(.top, 8)
                     }
                 }
                 
@@ -175,24 +167,6 @@ struct WelcomeView: View {
 }
 
 // MARK: - Supporting Views
-
-struct FeatureBadge: View {
-    let icon: String
-    let text: String
-    
-    var body: some View {
-        VStack(spacing: 4) {
-            Text(icon)
-                .font(.title2)
-            
-            Text(text)
-                .font(.caption)
-                .fontWeight(.medium)
-                .foregroundStyle(.secondary)
-        }
-        .frame(width: 70)
-    }
-}
 
 struct TrustBadge: View {
     let icon: String
