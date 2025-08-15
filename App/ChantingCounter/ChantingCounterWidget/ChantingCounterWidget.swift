@@ -7,7 +7,6 @@
 
 import WidgetKit
 import SwiftUI
-import Intents
 
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -318,11 +317,6 @@ struct ChantingCounterWidget: Widget {
         .description("Track your spiritual practice progress right on your home screen.")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
-}
-
-struct ConfigurationAppIntent: WidgetConfigurationIntent {
-    static var title: LocalizedStringResource = "Configuration"
-    static var description = IntentDescription("This is an example widget.")
 }
 
 #Preview(as: .systemSmall) {
