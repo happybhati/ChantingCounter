@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import WidgetKit
 
 /// Main data manager for the app using UserDefaults and CloudKit sync
 @MainActor
@@ -81,12 +82,34 @@ class DataManager: ObservableObject {
             userDefaults.removeObject(forKey: Keys.currentSession)
         }
         
+        // Update widget data
+        updateWidgetData()
+        
         // Sync with CloudKit if signed in
         if !userProfile.isGuest {
             Task {
                 await syncWithCloudKit()
             }
         }
+    }
+    
+    private func updateWidgetData() {
+        // Save key data to shared UserDefaults for widget access
+        let sharedDefaults = UserDefaults(suiteName: "group.com.hbhati.ChantingCounter")
+        
+        sharedDefaults?.set(userProfile.totalLifetimeCount, forKey: "totalLifetimeCount")
+        sharedDefaults?.set(userProfile.currentStreak, forKey: "currentStreak")
+        
+        // Calculate today's count
+        let today = Calendar.current.startOfDay(for: Date())
+        let todayCount = dailyStats.first { Calendar.current.isDate($0.date, inSameDayAs: today) }?.totalCount ?? 0
+        sharedDefaults?.set(todayCount, forKey: "todayCount")
+        
+        // Force synchronization
+        sharedDefaults?.synchronize()
+        
+        // Reload widgets
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     // MARK: - Session Management
