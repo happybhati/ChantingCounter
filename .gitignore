@@ -32,3 +32,7 @@ fastlane/test_output
 # Editors
 .idea/
 .vscode/
+# Large binary assets - keep local for App Store submission
+AppStoreAssets/Screenshots/*.png
+App/ChantingCounter/ChantingCounter/Assets.xcassets/AppIcon.appiconset/*.png
+*.png
